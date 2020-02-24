@@ -1,12 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Main from './components/Main';
+import './styles/stylesheet.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//const list = ['one', 'two', 'three', 'two'];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// const listElement = React.createElement('ol', null, 
+//     list.map((item, index) => React.createElement('li', {key: index}, item))
+// );
+
+// const listElement = 
+//     <div>
+//         <h1>List</h1>
+//         <ol> 
+//             {list.map((element, index) => <li key = {index}> {element} </li>) }
+//         </ol>
+//     </div>
+        
+// class List extends Component {
+//     render() {
+//         return(
+//             <ol> 
+//                 {list.map((element, index) => <li key = {index}> {element} </li>) }
+//             </ol>  
+//         )
+//     }
+// }
+
+// class Header extends Component {
+//     render() {
+//         return (<h1>List</h1>)
+//     }
+// }
+
+ReactDOM.render(<Main/>, document.getElementById('root'));
