@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 //class defenition
 
@@ -33,6 +34,11 @@ function Photo(props) {
             </div>
         </figure>
     )
+}
+
+Photo.propTypes = {
+    post: PropTypes.object.isRequired,
+    onRemovePost: PropTypes.func.isRequired
 }
 
 export default Photo
