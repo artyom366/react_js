@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import PhotoWall from './PhotoWall';
+import AddPhoto from './AddPhoto';
+import { Route } from 'react-router-dom';
 
 class Main extends Component {
     constructor() {
@@ -17,8 +19,18 @@ class Main extends Component {
         console.log('render')
         return (
             <div>
-                <Header text={'Photowall'} />
-                <PhotoWall posts={this.state.posts} onRemovePost={this.removePost} />
+                <Route exact path="/" render={() =>
+                    <div>
+                        <Header text={'Photowall'} />
+                        <PhotoWall posts={this.state.posts} onRemovePost={this.removePost} />
+                    </div>
+                }/>
+
+                <Route path="/addPhoto" render={() =>
+                    <div>
+                        <AddPhoto />
+                    </div>
+                }/>
             </div>
         )
     }

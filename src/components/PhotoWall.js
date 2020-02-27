@@ -1,6 +1,7 @@
 import React from 'react';
 import Photo from './Photo';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 //class defenition
 
@@ -15,14 +16,19 @@ import PropTypes from 'prop-types';
 
 //stateless fucntion defenition
 function PhotoWall(props) {
-    return (<div className="photo-grid">
-        {props.posts.map((post, index) => <Photo key={index} post={post} onRemovePost={props.onRemovePost} />)}
-    </div>)
+    return (
+        <div>
+            <Link className="addIcon" to="/addPhoto"></Link>
+            <div className="photo-grid">
+                {props.posts.map((post, index) => <Photo key={index} post={post} onRemovePost={props.onRemovePost} />)}
+            </div>
+        </div>
+    )
 }
 
 PhotoWall.propTypes = {
     posts: PropTypes.array.isRequired,
-    onRemovePost: PropTypes.func.isRequired
+    onRemovePost: PropTypes.func.isRequired,
 }
 
 export default PhotoWall
