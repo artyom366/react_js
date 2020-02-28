@@ -28,7 +28,7 @@ function Photo(props) {
             <img className="photo" src={post.imageLink} alt={post.description} />
             <figcaption><p> {post.description} </p></figcaption>
             <div className="button-container">
-                <button className="remove-button" onClick = {() => {
+                <button onClick = {() => {
                     props.onRemovePost(post)
                 }}>Remove</button>
             </div>
