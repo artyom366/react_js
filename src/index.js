@@ -1,8 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './components/Main';
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import Main from './components/Main'
+
 import {BrowserRouter} from 'react-router-dom'
-import './styles/stylesheet.css';
+
+import {createStore} from 'redux'
+import rootReducer from './redux/reducer'
+import {Provider} from 'react-redux'
+
+import './styles/stylesheet.css'
 
 //const list = ['one', 'two', 'three', 'two'];
 
@@ -34,4 +41,6 @@ import './styles/stylesheet.css';
 //     }
 // }
 
-ReactDOM.render(<BrowserRouter><Main/></BrowserRouter>, document.getElementById('root'));
+const store = createStore(rootReducer);
+
+ReactDOM.render(<Provider store={store}><BrowserRouter><Main/></BrowserRouter></Provider>, document.getElementById('root'));
